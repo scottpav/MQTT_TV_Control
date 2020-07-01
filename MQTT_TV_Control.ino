@@ -10,11 +10,11 @@
 #define LED 2
  
 //Enter your wifi credentials
-const char* ssid = "ssid";  
-const char* password =  "password";
+const char* ssid = "MailTruck";  
+const char* password =  "Faith1212";
 
 //Enter your mqtt server configurations
-const char* mqttServer = "192.168.1.x";    //Enter Your mqttServer address
+const char* mqttServer = "192.168.1.88";    //Enter Your mqttServer address
 const int mqttPort = 1883;       //Port number
 const char* mqttUser = ""; //User
 const char* mqttPassword = ""; //Password
@@ -103,18 +103,24 @@ void sourceNext(){
   irsend.sendNEC(0x40bed22d, 32); //Source
   delay(100);
   irsend.sendNEC(0x40be12ed, 32); //Up
+  delay(100);
+  irsend.sendNEC(0x40be52ad, 32); //Ok
 }
 
 void source2(){
   irsend.sendNEC(0x40bed22d, 32); //Source
   delay(100);
   irsend.sendNEC(0x40be12ed, 32); //Up
+  delay(100);
+  irsend.sendNEC(0x40be52ad, 32); //Ok
 }
 
 void source3(){
   irsend.sendNEC(0x40bed22d, 32); //Source
   delay(100);
   irsend.sendNEC(0x40beb24d, 32); //Down
+  delay(100);
+  irsend.sendNEC(0x40be52ad, 32); //Ok
 }
 void loop() {
   client.loop();
